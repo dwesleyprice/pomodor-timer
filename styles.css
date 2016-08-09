@@ -1,0 +1,97 @@
+body{
+
+}
+
+button{
+	margin: auto;
+
+}
+
+#mycounter{
+	color: white;
+	font-size: 20px;
+	position:  relative;
+	top:  50px;
+}
+
+.container{
+	margin: auto;
+	display: inline-block;
+	text-align: center;
+}
+
+.star-one{
+	z-index: 5;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 50px solid green;
+	transform: rotate(-45deg);
+	position: relative;
+	top: 75px;
+	left: 100px;
+}
+
+.star-two{
+	z-index: 7;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 60px solid green;
+	transform: rotate(35deg);
+	position: relative;
+	top: 20px;
+	left: 70px;
+}
+
+.star-three{
+	z-index: 3;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 40px solid green;
+	transform: rotate(105deg);
+	position: absolute;
+	top: 80px;
+	left: 70px;
+}
+
+.stem{
+	width: 6px;
+	height: 18px;
+	background: darkgreen;
+	transform: rotate(25deg);
+	position: relative;
+	top: 78px;
+	left: 95px;
+}
+
+.dimple-one
+{
+  z-index: 2;
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 3px solid darkred;
+  border-radius: 20px 0 0 0;
+  top: 116px;
+  left: 48px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(-15deg);
+}
+
+.pomodoro{
+	margin-top: -40px;
+	background-color: red;
+	width:  145px;
+	height:  125px;
+	border-radius: 50%
+}
+
+.fill{
+	height:  300px;
+}

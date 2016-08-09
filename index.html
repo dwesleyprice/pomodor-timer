@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pomodoro</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+<div class="container">
+  <div class="stem"></div>
+  <div class="star-one"></div>
+  <div class="star-two"></div>
+  <div class="star-three"></div>
+  <div class="dimple-one"></div>
+  <div class="pomodoro">
+    <div id="mycounter"></div>
+  </div>
+<button onclick="onTimer()">Start</button>
+<!-- <button onclick="stopTimer()">Stop</button> -->
+</div>
+<script>
+var counter = 0;
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+            counter++;
+            if (counter === 4){
+              alert("Take 15. You've earned it!");
+            }else{
+            alert("Take Five!");
+          }
+        }
+    }, 1000);
+}
+
+function onTimer() {
+    var fiveMinutes = 60 * 25,
+        display = document.querySelector('#mycounter');
+    startTimer(fiveMinutes, display);
+};
+
+</script>
+
+</body>
+</html>
