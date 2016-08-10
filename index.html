@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Pomodoro</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -9,17 +11,31 @@
 
 
 <div class="container">
-  <div class="stem"></div>
-  <div class="star-one"></div>
-  <div class="star-two"></div>
-  <div class="star-three"></div>
-  <div class="dimple-one"></div>
-  <div class="pomodoro">
-    <div id="mycounter"></div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="stem"></div>
+      <div class="star-one"></div>
+      <div class="star-two"></div>
+      <div class="star-three"></div>
+      <div class="dimple-one"></div>
+      <div class="dimple-two"></div>
+        <div class="pomodoro">
+          <div id="mycounter"></div>
+        </div>
+    </div>
+      <div class="col-sm-4"></div>
   </div>
-<button onclick="onTimer()">Start</button>
-<!-- <button onclick="stopTimer()">Stop</button> -->
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+          <button class="btn btn-primary" onclick="onTimer()">Start </button>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
 </div>
+
+
 <script>
 var counter = 0;
 function startTimer(duration, display) {
