@@ -20,8 +20,9 @@
       <div class="star-three"></div>
       <div class="dimple-one"></div>
       <div class="dimple-two"></div>
-        <div class="pomodoro">
+        <div id="tomato" class="pomodoro">
           <div id="mycounter"></div>
+          <div id="breakCounter"></div>
         </div>
     </div>
       <div class="col-sm-4"></div>
@@ -29,7 +30,7 @@
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
-          <button class="btn btn-primary" onclick="onTimer()">Start </button>
+          <button class="btn btn-sm btn-primary" onclick="onTimer(25)">Start </button>
     </div>
     <div class="col-sm-4"></div>
   </div>
@@ -38,9 +39,11 @@
 
 <script>
 var counter = 0;
-function startTimer(duration, display) {
+var myTimer;
+function startTimer(duration, display, whichTimer) {
+  console.log(display)
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    myTimer = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -50,21 +53,40 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
+          if(whichTimer == 'work'){
             timer = duration;
             counter++;
             if (counter === 4){
-              alert("Take 15. You've earned it!");
+              alert("Take 15 and start another set!");
+              breakTimer(15);            
             }else{
-            alert("Take Five!");
+              alert("Take Five!")
+              breakTimer(5);            
+            }
+          }else{
+            onTimer(25)
           }
-        }
+        } 
     }, 1000);
 }
 
-function onTimer() {
-    var fiveMinutes = 60 * 25,
+function onTimer(t) {
+    clearInterval(myTimer);  
+    var fiveMinutes = 60 * t,
         display = document.querySelector('#mycounter');
-    startTimer(fiveMinutes, display);
+        var tomato = document.getElementById('tomato');
+          tomato.classList.value = "pomodoro";
+    startTimer(fiveMinutes, display, 'work');
+};
+
+function breakTimer(t) {
+  clearInterval(myTimer);
+    var interval = 60 * t,
+        display = document.querySelector('#mycounter');
+          var tomato = document.getElementById('tomato');
+          tomato.classList.value = "pomodoro-green";
+          console.dir(tomato);
+    startTimer(interval, display, 'break');
 };
 
 </script>
