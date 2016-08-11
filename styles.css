@@ -21,6 +21,14 @@ button{
 	text-align: center;
 }
 
+.tomato-top{
+	margin:  auto;
+	display: inline-block;
+	position: relative;
+	top:  40px;
+	left:  -35px;
+}
+
 .star-one{
 	z-index: 3;
 	width: 0;
@@ -111,6 +119,7 @@ button{
 	width:  145px;
 	height:  125px;
 	border-radius: 50%;
+	margin:  auto;
 }
 
 .pomodoro-green{
@@ -120,6 +129,7 @@ button{
 	width:  145px;
 	height:  125px;
 	border-radius: 50%;
+	margin:  auto;
 }
 
 .fill{
